@@ -1,0 +1,32 @@
+.signup h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.signup p {
+  text-align: center;
+  font-size: 1.2rem;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.registration-success-message {
+  text-align: center;
+  font-size: 1.2rem;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 30px;
+  color: green;
+}
+
+@media (max-width: 768px) {
+  .signup h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .signup h1 {
+    font-size: 2rem;
+  }
+}

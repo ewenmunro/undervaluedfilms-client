@@ -1,0 +1,42 @@
+header {
+  background-color: rgb(11, 49, 198);
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 1.5rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  margin-right: 50px;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: rgb(46, 78, 251);
+}
+
+@media (max-width: 768px) {
+  header {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+    font-size: 0.7rem;
+  }
+}
