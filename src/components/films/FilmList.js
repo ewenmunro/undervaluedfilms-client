@@ -251,10 +251,10 @@ function FilmList() {
   return (
     <div className="film-list">
       <p>
-        *Disclaimer: All available <b>Watch Film</b> buttons are affiliate
-        links. Undervalued Films will make a commission on the sale you make
-        through the link. It is no extra cost to you to use the link, it's
-        simply another way to support Undervalued Films.
+        *Disclaimer: The MUBI link and all available <b>Watch Film</b> buttons
+        are affiliate links. <i>Undervalued Films</i> will make a commission on
+        the sale you make through the link. It is no extra cost to you to use
+        the link, it's simply another way to support <i>Undervalued Films</i>.
       </p>
       <input
         type="text"

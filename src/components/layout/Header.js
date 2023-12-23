@@ -59,6 +59,13 @@ function Header() {
           <NavLink to="/myprofile" className="nav-link">
             My Profile
           </NavLink>
+          <a
+            href="https://www.bonfire.com/undervaluedfilms/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Shop
+          </a>
           <NavLink to="/logout" className="nav-link">
             Logout
           </NavLink>
@@ -71,6 +78,13 @@ function Header() {
           <NavLink to="/about" className="nav-link">
             About
           </NavLink>
+          <a
+            href="https://www.bonfire.com/undervaluedfilms/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Shop
+          </a>
           <NavLink to="/login" className="nav-link">
             Login
           </NavLink>

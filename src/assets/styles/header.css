@@ -29,6 +29,17 @@ header {
   color: rgb(46, 78, 251);
 }
 
+a {
+  color: white;
+  text-decoration: none;
+  margin-right: 50px;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: rgb(46, 78, 251);
+}
+
 @media (max-width: 768px) {
   header {
     font-size: 1rem;

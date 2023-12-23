@@ -13,9 +13,30 @@ function Promo() {
           rel="noopener noreferrer"
           className="promo-link"
         >
-          here
+          here.
         </a>
-        .
+      </p>
+      <p>
+        Visit our shop{" "}
+        <a
+          href="https://www.bonfire.com/undervaluedfilms/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="promo-link"
+        >
+          here.
+        </a>
+      </p>{" "}
+      <p>
+        <i>Undervalued Films</i> values MUBI. Explore cinema with MUBI right{" "}
+        <a
+          href="https://mubi.com/t/web/global/l4mkmwk"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="promo-link"
+        >
+          here*.
+        </a>
       </p>
     </div>
   );

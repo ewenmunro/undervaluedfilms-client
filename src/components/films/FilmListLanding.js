@@ -18,6 +18,7 @@ function FilmListLanding() {
   const [displayedFilms, setDisplayedFilms] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filmsSorted, setFilmsSorted] = useState(false);
+  const [message, setMessage] = useState("");
 
   const { isAuthenticated } = useAuth();
 
@@ -361,6 +362,11 @@ function FilmListLanding() {
       yesButton.addEventListener("click", async () => {
         // Handle the 'Yes' answer
         try {
+          // Show loading message and hide table content
+          setLoading(true);
+          setDisplayedFilms([]);
+          setMessage("Your Mention request is being processed...");
+
           await axios.post(
             `${apiBaseUrl}/api/mentions/mentioned`,
             {
@@ -374,6 +380,11 @@ function FilmListLanding() {
               },
             }
           );
+
+          // Hide loading message and show table content after the user answers
+          setLoading(false);
+          setMessage("");
+          updateDisplayedFilms();
         } catch (error) {
           console.error("Failed to update mention status:", error);
         }
@@ -387,6 +398,11 @@ function FilmListLanding() {
       noButton.addEventListener("click", async () => {
         // Handle the 'No' answer
         try {
+          // Show loading message and hide table content
+          setLoading(true);
+          setDisplayedFilms([]);
+          setMessage("Your Mention request is being processed...");
+
           await axios.post(
             `${apiBaseUrl}/api/mentions/mentioned`,
             {
@@ -400,6 +416,11 @@ function FilmListLanding() {
               },
             }
           );
+
+          // Hide loading message and show table content after the user answers
+          setLoading(false);
+          setMessage("");
+          updateDisplayedFilms();
         } catch (error) {
           console.error("Failed to update mention status:", error);
         }
@@ -416,8 +437,15 @@ function FilmListLanding() {
 
       // Append the modal to the document body
       document.body.appendChild(modal);
+
+      // Hide loading message and show table content after user answers
+      setLoading(false);
+      setMessage("");
+      updateDisplayedFilms();
     } catch (error) {
       console.error("Failed to check mention status:", error);
+      setLoading(false);
+      setMessage("");
     }
   };
 
@@ -492,6 +520,11 @@ function FilmListLanding() {
         });
 
         star.addEventListener("click", async () => {
+          // Show loading message and hide table content
+          setLoading(true);
+          setDisplayedFilms([]);
+          setMessage("Your Rating request is being processed...");
+
           // Handle the user's rating
           if (userRating !== i) {
             try {
@@ -528,8 +561,15 @@ function FilmListLanding() {
               }
               // Update the user's rating in the film object
               film.userRating = i;
+
+              // Hide loading message and show table content after user rates
+              setLoading(false);
+              setMessage("");
+              updateDisplayedFilms();
             } catch (error) {
               console.error("Failed to update rating:", error);
+              setLoading(false);
+              setMessage("");
             }
           }
 
@@ -545,8 +585,15 @@ function FilmListLanding() {
 
       // Append the modal to the document body
       document.body.appendChild(modal);
+
+      // Hide loading message and show table content after user rates
+      setLoading(false);
+      setMessage("");
+      updateDisplayedFilms();
     } catch (error) {
       console.error("Failed to check rating status:", error);
+      setLoading(false);
+      setMessage("");
     }
   };
 
@@ -747,11 +794,12 @@ function FilmListLanding() {
   return (
     <div className="film-list">
       <p>
-        *Disclaimer: All available <b>Watch Now</b> buttons are affiliate links.
-        Undervalued Films will make a commission on the sale you make through
-        the link. It is no extra cost to you to use the link, it's simply
-        another way to support Undervalued Films.
+        *Disclaimer: The MUBI link and all available <b>Watch Film</b> buttons
+        are affiliate links. <i>Undervalued Films</i> will make a commission on
+        the sale you make through the link. It is no extra cost to you to use
+        the link, it's simply another way to support <i>Undervalued Films</i>.
       </p>
+      {message && <p className="mention-rating-loading-message">{message}</p>}
       {renderTableHeader()}
     </div>
   );
