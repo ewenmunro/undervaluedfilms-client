@@ -216,3 +216,20 @@ table td {
 .rating-modal button:hover {
   color: rgb(46, 78, 251);
 }
+
+/* Add for mobile devices */
+@media only screen and (max-width: 600px) {
+  table th,
+  table td {
+    padding: 2px;
+    font-size: 10px;
+  }
+
+  .trailer-button,
+  .mention-button,
+  .rating-button,
+  .watch-button {
+    padding: 2px 4px;
+    font-size: 10px;
+  }
+}
