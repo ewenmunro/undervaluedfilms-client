@@ -37,10 +37,14 @@
 
 /* film search field */
 .search-input {
-  width: 98%;
+  width: 80%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 10px;
 }
 
@@ -49,6 +53,8 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 table th {
@@ -208,6 +214,11 @@ table td {
   .mention-button,
   .rating-button,
   .watch-button {
+    padding: 2px 4px;
+    font-size: 10px;
+  }
+
+  .disable {
     padding: 2px 4px;
     font-size: 10px;
   }

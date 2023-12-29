@@ -241,7 +241,9 @@ function FilmList() {
               Watch Film
             </button>
           ) : (
-            <button disabled>Link Not Available</button>
+            <button className="disable" disabled>
+              Link Not Available
+            </button>
           )}
         </td>
       </tr>

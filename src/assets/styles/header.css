@@ -40,14 +40,9 @@ a:hover {
   color: rgb(46, 78, 251);
 }
 
-@media (max-width: 768px) {
+/* Add for mobile devices */
+@media only screen and (max-width: 600px) {
   header {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  header {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 }
