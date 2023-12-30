@@ -225,6 +225,14 @@ table td {
 
 /* Add for mobile devices */
 @media only screen and (max-width: 600px) {
+  .filter-options {
+    gap: 5px;
+  }
+
+  .filter-options button {
+    padding: 5px 10px;
+  }
+
   table th,
   table td {
     padding: 2px;
