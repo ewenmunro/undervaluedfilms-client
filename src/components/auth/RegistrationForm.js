@@ -209,7 +209,7 @@ function RegistrationForm({ onRegister }) {
 
       <h2>6. Contact Information</h2>
 
-      <p>6.1. For any questions or concerns regarding these terms and conditions, please contact us at <a href="mailto:undervaluedfilms@gmail.com">undervaluedfilms@gmail.com</a>.</p>    
+      <p>6.1. For any questions or concerns regarding these terms and conditions, please contact us at <a href="mailto:undervaluedfilms@gmail.com">undervaluedfilms@gmail.com.</a></p>    
     </div>
   `;
 
@@ -291,7 +291,7 @@ function RegistrationForm({ onRegister }) {
 
       <h2>8. Contact Us</h2>
 
-      <p>If you have any questions or concerns regarding this Privacy Policy, please contact us at <a href="mailto:undervaluedfilms@gmail.com">undervaluedfilms@gmail.com</a>.</p> 
+      <p>If you have any questions or concerns regarding this Privacy Policy, please contact us at <a href="mailto:undervaluedfilms@gmail.com">undervaluedfilms@gmail.com.</a></p> 
     </div>
   `;
 

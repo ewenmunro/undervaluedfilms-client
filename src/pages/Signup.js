@@ -25,9 +25,12 @@ function Signup() {
             there. And if our email cannot be found in your inbox or junk
             folder, contact us via{" "}
             <a href="mailto:undervaluedfilms@gmail.com">
-              undervaluedfilms@gmail.com
+              undervaluedfilms@gmail.com.
             </a>
-            .
+          </p>
+          <p>
+            You have 48hrs to verify your account. If you don't verify your
+            account within 48hrs, you'll have to sign up again.
           </p>
           <p>
             Once you've successfully verified your account, you can log in to
