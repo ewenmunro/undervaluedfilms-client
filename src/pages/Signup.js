@@ -29,8 +29,8 @@ function Signup() {
             </a>
           </p>
           <p>
-            You have 48hrs to verify your account. If you don't verify your
-            account within 48hrs, you'll have to sign up again.
+            You have 48-72hrs to verify your account. If you don't verify your
+            account within this time, you'll have to sign up again.
           </p>
           <p>
             Once you've successfully verified your account, you can log in to
