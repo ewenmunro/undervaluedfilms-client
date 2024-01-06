@@ -10,6 +10,8 @@ import AddFilm from "../../pages/AddFilm";
 import UserProfile from "../../pages/UserProfile";
 import Login from "../../pages/Login";
 import Signup from "../../pages/Signup";
+import TermsConditions from "../../pages/T&C";
+import PrivacyPolicy from "../../pages/PrivacyPolicy";
 
 // components auth
 import Logout from "../auth/Logout";
@@ -31,6 +33,8 @@ const AllRoutes = () => (
     <Route path="/verification/:token" element={<Verification />} />
     <Route path="/signup" element={<Signup />} />
     <Route path="/logout" element={<Logout />} />
+    <Route path="/terms-conditions" element={<TermsConditions />} />
+    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
   </Routes>
 );
 

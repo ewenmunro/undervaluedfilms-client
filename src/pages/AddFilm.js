@@ -16,6 +16,8 @@ function AddFilm() {
   return (
     <div className="addfilm">
       <h1>Add Film</h1>
+      {/* Message for when I need to disable the Add Film button */}
+      {/* <p>Note: I've had to disable the Add Film button because...</p> */}
       <AddFilmForm onAddFilm={handleAddFilm} />
     </div>
   );

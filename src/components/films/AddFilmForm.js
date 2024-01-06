@@ -12,6 +12,10 @@ const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
 function AddFilm({ onAddFilm }) {
   const { isAuthenticated } = useAuth();
+
+  // Variable to quickly disable Add Film button if I need to
+  let isButtonDisabled = false;
+
   // State to store user input
   const [formData, setFormData] = useState({
     title: "",
@@ -29,6 +33,9 @@ function AddFilm({ onAddFilm }) {
 
     // Extract film details from formData
     const { title, year, description, confirmationChecked } = formData;
+
+    // // Disable the Add Film button when I need to
+    // setIsButtonDisabled(true);
 
     // Clear previous success and error messages
     setSuccessMessage("");
@@ -228,7 +235,11 @@ function AddFilm({ onAddFilm }) {
           </label>
         </div>
         <div>
-          <button type="submit" className="add-film-button">
+          <button
+            type="submit"
+            className="add-film-button"
+            disabled={isButtonDisabled}
+          >
             Add Film
           </button>
         </div>

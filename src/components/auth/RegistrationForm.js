@@ -275,7 +275,7 @@ function RegistrationForm({ onRegister }) {
 
       <h2>4. Cookies and Tracking Technologies</h2>
 
-      <p>The Website may use cookies and similar tracking technologies to enhance your experience. You can set your browser to refuse all or some browser cookies, but this may affect your ability to access or use certain parts of the Website.</p>
+      <p>The Website may use cookies or other local storage where legally required, and may collect, share, and use personal data for the personalization of ads. You can set your browser to refuse all or some browser cookies, but this may affect your ability to access or use certain parts of the Website.</p>
 
       <h2>5. Your Choices</h2>
 
