@@ -141,3 +141,23 @@
   margin-top: 20px;
   color: red;
 }
+
+@media (max-width: 768px) {
+  .input-field {
+    width: 80%;
+  }
+
+  .terms-modal {
+    width: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .input-field {
+    width: 80%;
+  }
+
+  .terms-modal {
+    width: 300px;
+  }
+}

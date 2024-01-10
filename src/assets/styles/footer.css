@@ -3,12 +3,12 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
   display: flex;
   justify-content: center;
   text-align: center;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   padding-left: 20px;
   color: white;
   margin-top: auto;
@@ -23,7 +23,7 @@ nav ul {
 }
 
 nav li {
-  margin: 0 10px;
+  margin: 0 2.5px;
 }
 
 nav a {
@@ -38,11 +38,15 @@ nav a:hover {
 /* Add for mobile devices */
 @media only screen and (max-width: 600px) {
   footer {
-    font-size: 0.6rem;
+    font-size: 0.4rem;
   }
 
   nav,
   a {
     margin-right: 20px;
+  }
+
+  nav li {
+    margin: 0 2px;
   }
 }

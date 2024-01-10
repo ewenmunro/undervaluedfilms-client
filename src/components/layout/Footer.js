@@ -8,6 +8,24 @@ const Footer = () => {
       <nav>
         <ul>
           <li>
+            <a
+              href="https://ewenmunro.substack.com/?showWelcome=true"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Updates
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.bonfire.com/undervaluedfilms/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Shop
+            </a>
+          </li>
+          <li>
             <NavLink to="/terms-conditions">Terms & Conditions</NavLink>
           </li>
           <li>
