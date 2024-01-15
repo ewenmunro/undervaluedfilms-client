@@ -18,6 +18,7 @@ function AddFilm() {
       <h1>Add Film</h1>
       {/* Message for when I need to disable the Add Film button */}
       {/* <p>Note: I've had to disable the Add Film button because...</p> */}
+      {/* Add additional <p></p> message to let users know that they can send me films to be added to The Film List by subscribing to my newsletter and sending them via a chat */}
       <AddFilmForm onAddFilm={handleAddFilm} />
     </div>
   );
