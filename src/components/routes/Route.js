@@ -13,9 +13,13 @@ import Signup from "../../pages/Signup";
 import TermsConditions from "../../pages/T&C";
 import PrivacyPolicy from "../../pages/PrivacyPolicy";
 
-// components auth
+// components/auth
 import Logout from "../auth/Logout";
 import Verification from "../../pages/Verification";
+
+// components/film
+import FilmDetails from "../films/FilmDetails";
+import FilmDetailsPrivate from "../films/FilmDetailsPrivate";
 
 // components/route
 import PrivateRoutes from "./PrivateRoutes";
@@ -23,9 +27,14 @@ import PrivateRoutes from "./PrivateRoutes";
 const AllRoutes = () => (
   <Routes>
     <Route exact path="/" element={<Home />} />
+    <Route path="/films/:filmDetails" element={<FilmDetails />} />
     <Route path="/about" element={<About />} />
     <Route element={<PrivateRoutes />}>
       <Route exact path="/dashboard" element={<Landing />} />
+      <Route
+        path="/films/private/:filmDetails"
+        element={<FilmDetailsPrivate />}
+      />
       <Route path="/addfilm" element={<AddFilm />} />
       <Route path="/myprofile" element={<UserProfile />} />
     </Route>

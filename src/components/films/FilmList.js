@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 // assets/styles
@@ -12,6 +13,9 @@ function FilmList() {
   const [filteredFilms, setFilteredFilms] = useState([]);
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
+
+  // Use the useNavigate hook from 'react-router-dom'
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Function to fetch films data from the server
@@ -146,13 +150,16 @@ function FilmList() {
     }
   };
 
-  const openYouTubeTrailer = (film) => {
-    // Open a new tab with the YouTube trailer search URL
-    const searchQuery = `${film.title} trailer ${film.release_year}`;
-    const trailerURL = `https://www.youtube.com/results?search_query=${encodeURIComponent(
-      searchQuery
-    )}`;
-    window.open(trailerURL, "_blank");
+  // Function to open film details modal
+  const openFilmDetails = (film) => {
+    // Construct the URL based on film title and year
+    const urlTitle = film.title.replace(/\s+/g, "-").toLowerCase();
+    const urlYear = film.release_year;
+    const filmDetails = `${urlTitle}-${urlYear}`;
+    const filmUrl = `/films/${filmDetails}`;
+
+    // Pass the film as state to the FilmDetails component
+    navigate(filmUrl, { state: { film } });
   };
 
   const watchFilm = (film) => {
@@ -178,6 +185,111 @@ function FilmList() {
           console.error("Failed to generate a temporary identifier:", error);
         });
     }
+  };
+
+  const openSharePopup = (film) => {
+    // Create a modal/pop-up for share options
+    const modal = document.createElement("div");
+    modal.className = "share-modal";
+
+    // Close button for the modal
+    const closeButton = document.createElement("span");
+    closeButton.className = "close-button";
+    closeButton.textContent = "✖️";
+    closeButton.addEventListener("click", () => {
+      modal.remove(); // Close the modal when clicking the close button
+    });
+
+    // Share options content
+    const shareContent = document.createElement("div");
+    shareContent.className = "share-content";
+
+    const shareTitle = document.createElement("h1");
+    shareTitle.textContent = `Share ${film.title}:`;
+
+    const copyButton = document.createElement("button");
+    copyButton.className = "copy-button";
+    copyButton.textContent = "Copy URL";
+    copyButton.addEventListener("click", () => copyFilmURL(film));
+
+    const emailButton = document.createElement("button");
+    emailButton.className = "email-button";
+    emailButton.textContent = "Share via Email";
+    emailButton.addEventListener("click", () => shareViaEmail(film));
+
+    const fbButton = document.createElement("button");
+    fbButton.className = "fb-button";
+    fbButton.textContent = "Share on FB";
+    fbButton.addEventListener("click", () => shareOnFacebook(film));
+
+    const twitterButton = document.createElement("button");
+    twitterButton.className = "twitter-button";
+    twitterButton.textContent = "Share on X";
+    twitterButton.addEventListener("click", () => shareOnTwitter(film));
+
+    // Apply margin to buttons
+    [copyButton, emailButton, fbButton, twitterButton].forEach((button) => {
+      button.style.marginRight = "10px";
+    });
+
+    // Append elements to the modal
+    shareContent.appendChild(shareTitle);
+    shareContent.appendChild(copyButton);
+    shareContent.appendChild(emailButton);
+    shareContent.appendChild(fbButton);
+    shareContent.appendChild(twitterButton);
+
+    modal.appendChild(closeButton);
+    modal.appendChild(shareContent);
+
+    // Append the modal to the document body
+    document.body.appendChild(modal);
+  };
+
+  const copyFilmURL = (film) => {
+    const titleWithHyphens = film.title.toLowerCase().replace(/\s+/g, "-");
+    const filmURL = `undervaluedfilms.com/${titleWithHyphens}-${film.release_year}`;
+
+    navigator.clipboard.writeText(filmURL).then(() => {
+      const customAlert = document.querySelector(".custom-alert");
+
+      if (customAlert) {
+        customAlert.textContent = `${film.title} URL copied to clipboard!`;
+        customAlert.style.display = "block";
+
+        // Hide the alert after a delay (e.g., 3 seconds)
+        setTimeout(() => {
+          customAlert.style.display = "none";
+        }, 3000);
+      }
+    });
+  };
+
+  const shareViaEmail = (film) => {
+    const titleWithHyphens = film.title.toLowerCase().replace(/\s+/g, "-");
+    const subject = encodeURIComponent(`Check out this film: ${film.title}`);
+    const body = encodeURIComponent(
+      `I thought you might enjoy this film: undervaluedfilms.com/${titleWithHyphens}-${film.release_year}`
+    );
+    window.location.href = `mailto:?subject=${subject}&body=${body}`;
+  };
+
+  const shareOnFacebook = (film) => {
+    const titleWithHyphens = film.title.toLowerCase().replace(/\s+/g, "-");
+    const shareText = encodeURIComponent(`Check out this film: ${film.title}`);
+    const shareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+      `undervaluedfilms.com/${titleWithHyphens}-${film.release_year}`
+    )}&quote=${shareText}`;
+    window.open(shareURL, "_blank");
+  };
+
+  const shareOnTwitter = (film) => {
+    const titleWithHyphens = film.title.toLowerCase().replace(/\s+/g, "-");
+    const shareText = encodeURIComponent(`Check out this film: ${film.title}`);
+    const shareURL = `https://twitter.com/intent/tweet?text=${shareText}&url=${encodeURIComponent(
+      `undervaluedfilms.com/${titleWithHyphens}-${film.release_year}`
+    )}`;
+    window.open(shareURL, "_blank");
   };
 
   const handleSearchChange = (e) => {
@@ -215,8 +327,9 @@ function FilmList() {
         <th>Film Title</th>
         <th>Year of Release</th>
         <th>Logline</th>
-        <th>Film Trailer</th>
+        <th>Film Info</th>
         <th>*Watch Film</th>
+        <th>Share Film</th>
       </tr>
     );
   };
@@ -228,11 +341,8 @@ function FilmList() {
         <td>{film.release_year}</td>
         <td>{film.description}</td>
         <td>
-          <button
-            className="trailer-button"
-            onClick={() => openYouTubeTrailer(film)}
-          >
-            Watch Trailer
+          <button className="info-button" onClick={() => openFilmDetails(film)}>
+            Info
           </button>
         </td>
         <td>
@@ -241,10 +351,13 @@ function FilmList() {
               Watch Film
             </button>
           ) : (
-            <button className="disable" disabled>
-              Link Not Available
-            </button>
+            <button className="disabled-button">Link Not Available</button>
           )}
+        </td>
+        <td>
+          <button className="share-button" onClick={() => openSharePopup(film)}>
+            Share
+          </button>
         </td>
       </tr>
     );
@@ -252,6 +365,7 @@ function FilmList() {
 
   return (
     <div className="film-list">
+      <div className="custom-alert"></div>
       <p>
         *Disclaimer: The MUBI link and all available <b>Watch Film</b> buttons
         to Amazon are affiliate links. <i>Undervalued Films</i> will make a

@@ -23,7 +23,10 @@ function AddFilm({ onAddFilm }) {
     description: "",
   });
 
-  // State to store success and error messages
+  // State to manage loading state
+  const [isLoading, setIsLoading] = useState(false);
+
+  // State to store success, info, and error messages
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -31,13 +34,16 @@ function AddFilm({ onAddFilm }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Set loading state to true when the form is submitted
+    setIsLoading(true);
+
     // Extract film details from formData
     const { title, year, description, confirmationChecked } = formData;
 
     // // Disable the Add Film button when I need to
     // setIsButtonDisabled(true);
 
-    // Clear previous success and error messages
+    // Clear previous messages
     setSuccessMessage("");
     setErrorMessage("");
 
@@ -109,9 +115,9 @@ function AddFilm({ onAddFilm }) {
 
     // If no matching film was found, proceed to add the film
     try {
-      // Make an Axios POST request to your backend API to add a film
+      // Make an Axios POST request to your backend API to review a film
       const response = await axios.post(
-        `${apiBaseUrl}/api/films/addfilm`,
+        `${apiBaseUrl}/api/films/reviewfilm`,
         {
           title,
           release_year: year,
@@ -132,18 +138,27 @@ function AddFilm({ onAddFilm }) {
         setErrorMessage("");
 
         // Display a success message if the film was added successfully
-        setSuccessMessage("Film added to The Film List");
+        setSuccessMessage(
+          "Your request has been submitted for review. You will be notified the result of this review via email."
+        );
 
         // Call the onAddFilm function passed as a prop to update the film list
         onAddFilm(response.data.film);
       } else {
         // Handle other response statuses, if needed
-        setErrorMessage("Failed to add the film. Please try again.");
+        setErrorMessage(
+          "Failed to submit your request for review. Please try again."
+        );
       }
     } catch (error) {
       // Handle any errors that occur during the request
-      console.error("Failed to add the film:", error);
-      setErrorMessage("Failed to add the film. Please try again.");
+      console.error("Failed to submit your request for review:", error);
+      setErrorMessage(
+        "Failed to submit your request for review. Please try again."
+      );
+    } finally {
+      // Set loading state back to false when the request is complete
+      setIsLoading(false);
     }
   };
 
@@ -240,7 +255,7 @@ function AddFilm({ onAddFilm }) {
             className="add-film-button"
             disabled={isButtonDisabled}
           >
-            Add Film
+            {isLoading ? "Processing..." : "Add Film"}
           </button>
         </div>
         {errorMessage && <p className="error-message">{errorMessage}</p>}

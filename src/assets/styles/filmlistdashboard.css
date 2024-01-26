@@ -1,6 +1,6 @@
 .film-list {
   margin: 20px auto;
-  max-width: 1000px;
+  max-width: 80%;
 }
 
 .film-list p {
@@ -80,10 +80,11 @@ table td {
 }
 
 /* table buttons */
-.trailer-button,
+.info-button,
 .mention-button,
 .rating-button,
-.watch-button {
+.watch-button,
+.share-button {
   background-color: rgb(11, 49, 198);
   color: white;
   border: none;
@@ -101,10 +102,11 @@ table td {
   pointer-events: none;
 }
 
-.trailer-button:hover,
+.info-button:hover,
 .mention-button:hover,
 .rating-button:hover,
-.watch-button:hover {
+.watch-button:hover,
+.share-button:hover {
   color: rgb(46, 78, 251);
 }
 
@@ -113,6 +115,102 @@ table td {
   background-color: grey;
   color: white;
   cursor: not-allowed;
+}
+
+.share-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.share-content {
+  text-align: center;
+}
+
+.copy-button,
+.email-button {
+  background-color: rgb(11, 49, 198);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 1.5%;
+}
+
+.fb-button {
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 1.5%;
+}
+
+.fb-button:hover {
+  background-color: #8b9dc3;
+}
+
+.twitter-button {
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 1.5%;
+}
+
+.twitter-button:hover {
+  background-color: white;
+  color: #000000;
+}
+
+.custom-alert {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  display: none;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10%,
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.custom-alert.show {
+  animation: fadeInOut 3s forwards;
 }
 
 /* Mention Pop-up */
@@ -225,6 +323,14 @@ table td {
 
 /* Add for mobile devices */
 @media only screen and (max-width: 600px) {
+  .film-list {
+    max-width: 90%;
+  }
+
+  .film-list p {
+    font-size: 1rem;
+  }
+
   .filter-options {
     gap: 5px;
   }
@@ -236,19 +342,20 @@ table td {
   table th,
   table td {
     padding: 2px;
-    font-size: 10px;
+    font-size: 6px;
   }
 
-  .trailer-button,
+  .info-button,
   .mention-button,
   .rating-button,
-  .watch-button {
+  .watch-button,
+  .share-button {
     padding: 2px 4px;
-    font-size: 10px;
+    font-size: 5px;
   }
 
   .disabled-button {
     padding: 2px 4px;
-    font-size: 10px;
+    font-size: 5px;
   }
 }
