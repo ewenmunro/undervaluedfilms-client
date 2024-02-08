@@ -1,48 +1,36 @@
-footer {
-  background-color: black;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  font-size: 1.5rem;
-  display: flex;
-  justify-content: center;
+.userprofile {
+  height: 100vh;
+}
+
+.userprofile h1 {
   text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 20px;
-  color: white;
-  margin-top: auto;
-  flex-shrink: 0;
+  font-size: 3rem;
+  margin-bottom: -20px;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  padding: 0;
+.userprofile p {
+  text-align: center;
+  font-size: 1.2rem;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
-nav li {
-  margin: 0 10px;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-}
-
-nav a:hover {
-  color: rgb(46, 78, 251);
-}
-
-/* Add for mobile devices */
-@media only screen and (max-width: 600px) {
-  footer {
-    font-size: 0.6rem;
+@media (max-width: 768px) {
+  .userprofile {
+    height: 0;
   }
 
-  nav,
-  a {
-    margin-right: 20px;
+  .userprofile h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .userprofile {
+    height: 0;
+  }
+
+  .userprofile h1 {
+    font-size: 2rem;
   }
 }
