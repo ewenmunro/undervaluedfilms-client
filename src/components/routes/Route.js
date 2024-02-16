@@ -7,6 +7,7 @@ import Home from "../../pages/Home";
 import About from "../../pages/About";
 import Landing from "../../pages/Landing";
 import AddFilm from "../../pages/AddFilm";
+import MasterAddFilm from "../../pages/MasterAddFilm";
 import UserProfile from "../../pages/UserProfile";
 import Login from "../../pages/Login";
 import Signup from "../../pages/Signup";
@@ -36,6 +37,10 @@ const AllRoutes = () => (
         element={<FilmDetailsPrivate />}
       />
       <Route path="/addfilm" element={<AddFilm />} />
+      <Route
+        path="/master/addfilm/:title/:release_year/:description/:user_id"
+        element={<MasterAddFilm />}
+      />
       <Route path="/myprofile" element={<UserProfile />} />
     </Route>
     <Route path="/login" element={<Login />} />

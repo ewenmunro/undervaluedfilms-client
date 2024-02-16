@@ -1,0 +1,33 @@
+.addfilm {
+  height: 100vh;
+}
+
+.addfilm h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.addfilm p {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .addfilm {
+    height: 110vh;
+  }
+
+  .addfilm h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .addfilm {
+    height: 110vh;
+  }
+
+  .addfilm h1 {
+    font-size: 2rem;
+  }
+}
