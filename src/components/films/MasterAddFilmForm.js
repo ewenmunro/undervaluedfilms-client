@@ -21,7 +21,9 @@ function MasterAddFilmForm({ onAddFilm }) {
     title: "",
     year: "",
     description: "",
+    watchLink: "",
     userId: "",
+    confirmationChecked: false,
   });
 
   useEffect(() => {
@@ -75,7 +77,8 @@ function MasterAddFilmForm({ onAddFilm }) {
     setIsLoading(true);
 
     // Extract film details from formData
-    const { title, year, description, userId, confirmationChecked } = formData;
+    const { title, year, description, watchLink, userId, confirmationChecked } =
+      formData;
 
     // // Disable the Add Film button when I need to
     // setIsButtonDisabled(true);
@@ -159,6 +162,7 @@ function MasterAddFilmForm({ onAddFilm }) {
           title,
           release_year: year,
           description,
+          watchLink,
           userId,
         },
         {
@@ -168,9 +172,15 @@ function MasterAddFilmForm({ onAddFilm }) {
         }
       );
 
-      if (response.status === 201) {
+      if (response.status === 200) {
         // Clear the form data
-        setFormData({ title: "", year: "", description: "", userId: "" });
+        setFormData({
+          title: "",
+          year: "",
+          description: "",
+          watchLink: "",
+          userId: "",
+        });
 
         // Clear previous error messages
         setErrorMessage("");
@@ -217,7 +227,13 @@ function MasterAddFilmForm({ onAddFilm }) {
 
       if (response.status === 200) {
         // Clear the form data
-        setFormData({ title: "", year: "", description: "", userId: "" });
+        setFormData({
+          title: "",
+          year: "",
+          description: "",
+          watchLink: "",
+          userId: "",
+        });
 
         // Clear previous error messages
         setErrorMessage("");
@@ -310,6 +326,17 @@ function MasterAddFilmForm({ onAddFilm }) {
             name="description"
             placeholder="Logline"
             value={formData.description}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="watchLink" />
+          <input
+            type="text"
+            id="watchLink"
+            name="watchLink"
+            placeholder="Watch Link"
+            value={formData.watchLink}
             onChange={handleInputChange}
           />
         </div>

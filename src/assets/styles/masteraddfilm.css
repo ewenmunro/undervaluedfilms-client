@@ -14,7 +14,7 @@
 
 @media (max-width: 768px) {
   .addfilm {
-    height: 110vh;
+    height: 120vh;
   }
 
   .addfilm h1 {
@@ -24,7 +24,7 @@
 
 @media (max-width: 576px) {
   .addfilm {
-    height: 110vh;
+    height: 120vh;
   }
 
   .addfilm h1 {
