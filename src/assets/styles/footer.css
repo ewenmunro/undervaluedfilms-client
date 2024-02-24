@@ -7,8 +7,8 @@ footer {
   display: flex;
   justify-content: center;
   text-align: center;
-  padding-top: 10px;
-  padding-bottom: 20px;
+  padding-top: 15px;
+  padding-bottom: 17px;
   padding-left: 20px;
   color: white;
   margin-top: auto;
@@ -38,8 +38,9 @@ nav a:hover {
 /* Add for mobile devices */
 @media only screen and (max-width: 600px) {
   footer {
-    font-size: 0.3rem;
-    padding-bottom: 15px;
+    font-size: 0.34rem;
+    padding-top: 10px;
+    padding-bottom: 12px;
   }
 
   nav,
