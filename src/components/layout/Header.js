@@ -60,6 +60,13 @@ function Header() {
             My Profile
           </NavLink>
           <a
+            href="https://ewenmunro.com/coffee"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Coffee
+          </a>
+          <a
             href="https://www.bonfire.com/undervaluedfilms/"
             target="_blank"
             rel="noopener noreferrer"
@@ -78,6 +85,13 @@ function Header() {
           <NavLink to="/about" className="nav-link">
             About
           </NavLink>
+          <a
+            href="https://ewenmunro.com/coffee"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Coffee
+          </a>
           <a
             href="https://www.bonfire.com/undervaluedfilms/"
             target="_blank"

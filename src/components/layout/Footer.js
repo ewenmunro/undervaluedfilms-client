@@ -18,6 +18,15 @@ const Footer = () => {
           </li>
           <li>
             <a
+              href="https://ewenmunro.com/coffee"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Coffee
+            </a>
+          </li>
+          <li>
+            <a
               href="https://www.bonfire.com/undervaluedfilms/"
               target="_blank"
               rel="noopener noreferrer"

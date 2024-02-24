@@ -17,6 +17,17 @@ function Promo() {
         </a>
       </p>
       <p>
+        Support <i>Undervalued Films</i> by buying a coffee{" "}
+        <a
+          href="https://ewenmunro.com/coffee"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="promo-link"
+        >
+          here.
+        </a>
+      </p>
+      <p>
         Visit our shop{" "}
         <a
           href="https://www.bonfire.com/undervaluedfilms/"
