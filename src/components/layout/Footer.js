@@ -13,7 +13,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Updates
+              Ewen's Newsletter
             </a>
           </li>
           <li>
