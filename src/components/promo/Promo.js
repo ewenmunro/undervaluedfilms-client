@@ -5,8 +5,8 @@ function Promo() {
   return (
     <div className="promo">
       <p>
-        Subscribe to Updates to receive the latest <i>Undervalued Films</i>{" "}
-        updates, and more, right{" "}
+        Subscribe to Ewen's Newsletter to receive film recommendations, and
+        more, right{" "}
         <a
           href="https://ewenmunro.substack.com/?showWelcome=true"
           target="_blank"
