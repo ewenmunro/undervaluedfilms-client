@@ -248,7 +248,7 @@ function FilmList() {
 
   const copyFilmURL = (film) => {
     const titleWithHyphens = film.title.toLowerCase().replace(/\s+/g, "-");
-    const filmURL = `undervaluedfilms.com/${titleWithHyphens}-${film.release_year}`;
+    const filmURL = `undervaluedfilms.com/films/${titleWithHyphens}-${film.release_year}`;
 
     navigator.clipboard.writeText(filmURL).then(() => {
       const customAlert = document.querySelector(".custom-alert");
@@ -269,7 +269,7 @@ function FilmList() {
     const titleWithHyphens = film.title.toLowerCase().replace(/\s+/g, "-");
     const subject = encodeURIComponent(`Check out this film: ${film.title}`);
     const body = encodeURIComponent(
-      `I thought you might enjoy this film: undervaluedfilms.com/${titleWithHyphens}-${film.release_year}`
+      `I thought you might enjoy this film: undervaluedfilms.com/films/${titleWithHyphens}-${film.release_year}`
     );
     window.location.href = `mailto:?subject=${subject}&body=${body}`;
   };
@@ -278,7 +278,7 @@ function FilmList() {
     const titleWithHyphens = film.title.toLowerCase().replace(/\s+/g, "-");
     const shareText = encodeURIComponent(`Check out this film: ${film.title}`);
     const shareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-      `undervaluedfilms.com/${titleWithHyphens}-${film.release_year}`
+      `undervaluedfilms.com/films/${titleWithHyphens}-${film.release_year}`
     )}&quote=${shareText}`;
     window.open(shareURL, "_blank");
   };
@@ -287,7 +287,7 @@ function FilmList() {
     const titleWithHyphens = film.title.toLowerCase().replace(/\s+/g, "-");
     const shareText = encodeURIComponent(`Check out this film: ${film.title}`);
     const shareURL = `https://twitter.com/intent/tweet?text=${shareText}&url=${encodeURIComponent(
-      `undervaluedfilms.com/${titleWithHyphens}-${film.release_year}`
+      `undervaluedfilms.com/films/${titleWithHyphens}-${film.release_year}`
     )}`;
     window.open(shareURL, "_blank");
   };
