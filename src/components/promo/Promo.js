@@ -17,6 +17,26 @@ function Promo() {
         </a>
       </p>
       <p>
+        Check out related sites{" "}
+        <a
+          href="https://undervaluedbooks.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="undervaluedbooks-link"
+        >
+          Undervalued Books
+        </a>{" "}
+        &{" "}
+        <a
+          href="https://www.undervaluedmusic.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="undervaluedmusic-link"
+        >
+          Undervalued Music.
+        </a>
+      </p>
+      <p>
         Support <i>Undervalued Films</i> by buying a coffee{" "}
         <a
           href="https://ewenmunro.com/coffee"
