@@ -451,15 +451,15 @@ const FilmDetailsPrivate = () => {
           Rate
         </button>
       </p>
-      <p>
+      {/* <p>
         *Disclaimer: If the <b>Watch Film</b> button is available and goes to
         Amazon, then it is an affiliate link. <i>Undervalued Films</i> will make
         a commission on the sale you make through the link. It is no extra cost
         to you to use the link, it's simply another way to support{" "}
         <i>Undervalued Films</i>.
-      </p>
+      </p> */}
       <p>
-        <b>*Watch Film:</b>
+        <b>Watch Film:</b>
       </p>
       {film.watch_link ? (
         <button

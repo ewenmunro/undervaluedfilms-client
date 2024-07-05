@@ -328,7 +328,7 @@ function FilmList() {
         <th>Year of Release</th>
         <th>Logline</th>
         <th>Film Info</th>
-        <th>*Watch Film</th>
+        <th>Watch Film</th>
         <th>Share Film</th>
       </tr>
     );
@@ -366,13 +366,13 @@ function FilmList() {
   return (
     <div className="film-list">
       <div className="custom-alert"></div>
-      <p>
+      {/* <p>
         *Disclaimer: The MUBI link and all available <b>Watch Film</b> buttons
         to Amazon are affiliate links. <i>Undervalued Films</i> will make a
         commission on the sale you make through the link. It is no extra cost to
         you to use the link, it's simply another way to support{" "}
         <i>Undervalued Films</i>.
-      </p>
+      </p> */}
       <input
         type="text"
         placeholder="Search Film Title"

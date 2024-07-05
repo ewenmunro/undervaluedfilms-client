@@ -58,7 +58,7 @@ function Promo() {
           here.
         </a>
       </p>{" "}
-      <p>
+      {/* <p>
         <i>Undervalued Films</i> values MUBI. Explore cinema with MUBI right{" "}
         <a
           href="https://mubi.com/t/web/global/l4mkmwk"
@@ -68,7 +68,7 @@ function Promo() {
         >
           here*.
         </a>
-      </p>
+      </p> */}
     </div>
   );
 }
